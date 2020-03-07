@@ -1,0 +1,46 @@
+.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $dark;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0.1px;
+    color: $accent;
+  }
+
+  &__mark {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.1px;
+    color: $dark;
+    background-color: $ligth;
+  }
+}
+
+.social__link {
+  text-decoration: none;
+
+  &:not(:first-of-type) {
+    margin-left: 10px;
+  }
+}
+
+.vk-icon, .facebook-icon, .instagram-icon {
+  width: 25px;
+  height: 25px;
+  fill: $ligth;
+}
+
+.vk-icon:hover path, .facebook-icon:hover, .instagram-icon:hover {
+  fill: $secondary;
+}

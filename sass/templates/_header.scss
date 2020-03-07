@@ -1,0 +1,75 @@
+.header {
+  background-color: $accent;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 100vh;
+  }
+
+  &__mark {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-weight: 300;
+    color: $ligth;
+    background-color: $dark;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  &__button {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: $dark;
+    cursor: pointer;
+    border: none;
+  }
+
+  &__button::before, &__button::after {
+    position: absolute;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: $dark;
+  }
+
+  &__button::before {
+    top: -7px;
+  }
+
+  &__button::after {
+    bottom: -7px;
+  }
+}
+
+.navigation {
+  display: none;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+  color: $primary;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  &__title {
+    text-align: center;
+    font-size: 48px;
+  }
+}
