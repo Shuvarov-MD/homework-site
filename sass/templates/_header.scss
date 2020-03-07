@@ -21,37 +21,87 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-
-  &__button {
-    position: relative;
-    width: 30px;
-    height: 3px;
-    background-color: $dark;
-    cursor: pointer;
-    border: none;
-  }
-
-  &__button::before, &__button::after {
-    position: absolute;
-    left: 0;
-    display: block;
-    content: "";
-    width: 100%;
-    height: 3px;
-    background-color: $dark;
-  }
-
-  &__button::before {
-    top: -7px;
-  }
-
-  &__button::after {
-    bottom: -7px;
-  }
+  align-items: center;
 }
 
 .navigation {
-  display: none;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+  }
+}
+
+.button__line {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  margin-top: -2px;
+  background-color: $primary;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    margin-top: -2px;
+    background-color: $primary;
+    display: block;
+    transition: 0.2s;
+  }
+
+  &::before {
+    transform: translateY(-9px);
+  }
+  &::after {
+    transform: translateY(9px);
+  }
+  .navigation__button--active &::before {
+    transform: rotate(35deg);
+  }
+  .navigation__button--active &::after {
+    transform: rotate(-35deg);
+  }
+  .navigation__button--active & {
+    background-color: transparent;
+  }
+}
+
+
+
+
+
+.menu {
+  display: flex;
+  list-style: none;
+  transition: 0.3s;
+  transform-origin: right center;
+  transform: scaleX(0) translateX(30%);
+  opacity: 0;
+
+  &--active {
+    transform: scaleX(1) translateX(0%);
+    opacity: 1;
+  }
+
+  &__link {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 0.1px;
+    color: $primary;
+    &:hover {
+      border-bottom: 2px solid $primary;
+      padding-bottom: 5px;
+    }
+  }
 }
 
 .logo {
